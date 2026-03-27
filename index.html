@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Seko & Rongkong | Permata Tersembunyi Luwu Utara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        coffee: {
+                            50: '#fdf8f5',
+                            100: '#f8ede6',
+                            200: '#eed6c8',
+                            300: '#e1b7a1',
+                            400: '#d09173',
+                            500: '#c3734f',
+                            600: '#b75b3c',
+                            700: '#994731',
+                            800: '#7d3b2a',
+                            900: '#653224',
+                            950: '#36170f',
+                        },
+                        gold: '#D4AF37'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=2000') center/cover fixed;
+        }
+        .savanna-bg {
+            background: linear-gradient(rgba(54, 23, 15, 0.85), rgba(54, 23, 15, 0.95)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000') center/cover fixed;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-300 font-sans antialiased selection:bg-coffee-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i data-lucide="coffee" class="text-gold h-8 w-8"></i>
+                    <span class="font-serif text-2xl font-bold text-white tracking-wider">Lutra<span class="text-gold">Coffee</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#tentang" class="text-sm font-medium hover:text-gold transition-colors">Tentang</a>
+                    <a href="#produk" class="text-sm font-medium hover:text-gold transition-colors">Varian Spesialti</a>
+                    <a href="#budaya" class="text-sm font-medium hover:text-gold transition-colors">Tradisi & Budaya</a>
+                    <a href="#interaktif" class="text-sm font-medium hover:text-gold transition-colors">Temukan Kopimu</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#pesan" class="bg-gold text-stone-900 px-6 py-2 rounded-full font-semibold hover:bg-yellow-500 transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)]">Pesan Sekarang</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-stone-300 hover:text-white">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 absolute w-full border-t border-stone-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#tentang" class="px-3 py-2 text-base font-medium hover:text-gold">Tentang</a>
+                <a href="#produk" class="px-3 py-2 text-base font-medium hover:text-gold">Varian Spesialti</a>
+                <a href="#budaya" class="px-3 py-2 text-base font-medium hover:text-gold">Tradisi</a>
+                <a href="#interaktif" class="px-3 py-2 text-base font-medium text-gold">Temukan Kopimu</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold/50 bg-gold/10 text-gold text-sm font-medium mb-6">
+                    <i data-lucide="award" class="w-4 h-4"></i>
+                    <span>Sertifikasi Indikasi Geografis (IG)</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-6">
+                    Mahakarya Alam dari <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-300">Jantung Sulawesi</span>
+                </h1>
+                <p class="text-lg md:text-xl text-stone-300 mb-8 max-w-2xl leading-relaxed">
+                    Nikmati kekayaan cita rasa Kopi Arabika Seko dan Kopi Rongkong. Ditanam di ketinggian 1.400 mdpl tanpa pestisida, menghadirkan aroma rempah, karamel, dan tradisi leluhur Luwu Utara di setiap sesapannya.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#produk" class="bg-gold text-stone-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-500 transition-all shadow-lg hover:-translate-y-1 flex items-center gap-2">
+                        Jelajahi Rasa <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#budaya" class="px-8 py-3 rounded-full font-bold text-lg text-white border border-stone-500 hover:bg-stone-800 transition-all flex items-center gap-2">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i> Cerita Petani
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center text-stone-500">
+            <span class="text-xs tracking-widest uppercase mb-2">Gulir ke bawah</span>
+            <i data-lucide="chevron-down" class="w-6 h-6"></i>
+        </div>
+    </section>
+
+    <!-- Stats / Features -->
+    <section class="py-12 bg-coffee-950 border-b border-coffee-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-gold text-4xl font-serif font-bold mb-2">84.75</div>
+                    <div class="text-sm text-stone-400 font-medium uppercase tracking-wider">Skor Spesialti SCAA</div>
+                </div>
+                <div>
+                    <div class="text-gold text-4xl font-serif font-bold mb-2">100%</div>
+                    <div class="text-sm text-stone-400 font-medium uppercase tracking-wider">Organik & Alami</div>
+                </div>
+                <div>
+                    <div class="text-gold text-4xl font-serif font-bold mb-2">1.400m</div>
+                    <div class="text-sm text-stone-400 font-medium uppercase tracking-wider">Ketinggian Tanam (mdpl)</div>
+                </div>
+                <div>
+                    <div class="text-gold text-4xl font-serif font-bold mb-2">Eropa</div>
+                    <div class="text-sm text-stone-400 font-medium uppercase tracking-wider">Jangkauan Ekspor</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-24 bg-stone-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&q=80&w=800" alt="" class="object-cover w-full h-full hover:scale-105 transition-duration-700">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 bg-coffee-900 p-8 rounded-2xl border border-coffee-700 hidden md:block max-w-xs shadow-2xl">
+                        <i data-lucide="quote" class="text-gold w-10 h-10 mb-4 opacity-50"></i>
+                        <p class="text-sm text-stone-200 italic">"Pemerintah Luwu Utara bertekad membawa Kopi Seko dan Rongkong ke pentas perdagangan dunia."</p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-gold font-medium tracking-widest uppercase mb-3 text-sm flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Warisan Luwu Utara
+                    </h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Ditukar dengan Emas Sejak Abad Pertengahan</h3>
+                    <p class="text-stone-400 mb-6 leading-relaxed">
+                        Jauh sebelum era modern, masyarakat adat di Seko telah menjadi bagian dari jalur perdagangan internasional. Pedagang Arab, Cina, dan Jawa masuk melalui Sabbang, menukarkan emas, sutra, dan keramik porselen demi mendapatkan segenggam <span class="text-white font-medium">Kahwa (Kopi)</span> dari pegunungan ini.
+                    </p>
+                    <p class="text-stone-400 mb-8 leading-relaxed">
+                        Kini, Kopi Arabika Seko telah mengantongi Sertifikat Indikasi Geografis (IG). Dikelola langsung oleh pekebun lokal di dataran tinggi yang eksotis, bebas dari pestisida dan pupuk kimia, menjadikannya salah satu kopi paling murni di Nusantara.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-gold shrink-0"></i>
+                            <span class="text-stone-300">Dukung UMKM Lokal: Didorong langsung oleh Bupati Luwu Utara untuk disajikan di berbagai warung kopi dan kafe (Warkop).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-gold shrink-0"></i>
+                            <span class="text-stone-300">Melestarikan kearifan lokal melalui kelembagaan Masyarakat Perlindungan Indikasi Geografis (MPIG).</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="produk" class="py-24 bg-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-gold font-medium tracking-widest uppercase mb-3 text-sm">Varian Biji Kopi</h2>
+                <h3 class="text-4xl font-serif font-bold text-white mb-4">Dua Karakter, Satu Tanah Kelahiran</h3>
+                <p class="text-stone-400">Pilih kekayaan rasa yang paling sesuai dengan kepribadian Anda. Keduanya ditanam dengan penuh cinta oleh petani lokal Luwu Utara.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Seko Coffee -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:border-gold/50 transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900 to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute bottom-4 left-6 z-20">
+                            <span class="bg-coffee-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Specialty Arabica</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-2xl font-serif font-bold text-white mb-2">Arabika Seko</h4>
+                        <p class="text-stone-400 mb-6 text-sm">Raja dari dataran tinggi Sabana Seko. Terkenal menembus pasar Eropa dengan kualitasnya yang konsisten dan proses pascapanen yang ketat.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="text-stone-300">Caramelly (Karamel Manis)</span>
+                                    <span class="text-gold font-bold">Tinggi</span>
+                                </div>
+                                <div class="w-full bg-stone-800 rounded-full h-1.5"><div class="bg-gold h-1.5 rounded-full" style="width: 85%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="text-stone-300">Spicy (Rempah Hangat)</span>
+                                    <span class="text-gold font-bold">Sedang</span>
+                                </div>
+                                <div class="w-full bg-stone-800 rounded-full h-1.5"><div class="bg-gold h-1.5 rounded-full" style="width: 70%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="text-stone-300">Astringent (Kekuatan Rasa)</span>
+                                    <span class="text-gold font-bold">Sedang</span>
+                                </div>
+                                <div class="w-full bg-stone-800 rounded-full h-1.5"><div class="bg-gold h-1.5 rounded-full" style="width: 60%"></div></div>
+                            </div>
+                        </div>
+                        <button class="w-full py-3 border border-gold text-gold hover:bg-gold hover:text-stone-900 rounded-lg font-semibold transition-colors">
+                            Lihat Detail & Pesan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Rongkong Coffee -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:border-gold/50 transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-900 to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&q=80&w=800" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute bottom-4 left-6 z-20">
+                            <span class="bg-coffee-800 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Premium Robusta & Arabica</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="text-2xl font-serif font-bold text-white mb-2">Kopi Rongkong</h4>
+                        <p class="text-stone-400 mb-6 text-sm">Kebanggaan Warkop lokal Luwu Utara. Kopi pelopor penggerak ekonomi kerakyatan dengan body yang tebal dan aroma yang menggugah selera.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="text-stone-300">Body (Ketebalan Rasa)</span>
+                                    <span class="text-gold font-bold">Sangat Tinggi</span>
+                                </div>
+                                <div class="w-full bg-stone-800 rounded-full h-1.5"><div class="bg-gold h-1.5 rounded-full" style="width: 95%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="text-stone-300">Earthy (Aroma Alam)</span>
+                                    <span class="text-gold font-bold">Tinggi</span>
+                                </div>
+                                <div class="w-full bg-stone-800 rounded-full h-1.5"><div class="bg-gold h-1.5 rounded-full" style="width: 80%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="text-stone-300">Acidity (Keasaman)</span>
+                                    <span class="text-gold font-bold">Rendah</span>
+                                </div>
+                                <div class="w-full bg-stone-800 rounded-full h-1.5"><div class="bg-gold h-1.5 rounded-full" style="width: 30%"></div></div>
+                            </div>
+                        </div>
+                        <button class="w-full py-3 border border-gold text-gold hover:bg-gold hover:text-stone-900 rounded-lg font-semibold transition-colors">
+                            Lihat Detail & Pesan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="budaya" class="savanna-bg py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1518832553480-cee0eb2aa7ab?auto=format&fit=crop&q=80&w=600" alt="" class="rounded-xl object-cover h-48 w-full shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1495474472201-3ce2ebf4a188?auto=format&fit=crop&q=80&w=600" alt="" class="rounded-xl object-cover h-48 w-full mt-8 shadow-lg">
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-gold font-medium tracking-widest uppercase mb-3 text-sm flex items-center gap-2">
+                        <i data-lucide="flame" class="w-4 h-4"></i> Kearifan Lokal
+                    </h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Filosofi "Ngopi di Dapur"</h3>
+                    <p class="text-stone-300 mb-6 text-lg leading-relaxed">
+                        Di tengah dinginnya udara sabana Seko yang berkabut, terdapat sebuah tradisi unik. Tamu yang datang tidak dijamu di ruang tamu, melainkan diajak langsung ke dapur.
+                    </p>
+                    <div class="bg-stone-900/60 p-6 rounded-xl border-l-4 border-gold mb-6 backdrop-blur-sm">
+                        <p class="italic text-stone-200">
+                            "Menjamu tamu di dapur menunjukkan kehangatan silaturahmi, menjadikan kekeluargaan terasa lebih dekat sambil menikmati secangkir kopi Seko hasil sangrai sendiri untuk menghangatkan tubuh."
+                        </p>
+                    </div>
+                    <p class="text-stone-400">
+                        Proses pengolahannya pun masih merawat tradisi. Biji kopi disangrai secara manual, menciptakan aroma khas yang tidak bisa diduplikasi oleh mesin modern.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz Applet -->
+    <section id="interaktif" class="py-24 bg-stone-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-coffee-950 rounded-3xl p-8 md:p-12 border border-coffee-800 shadow-2xl relative overflow-hidden">
+                <!-- Decorative elements -->
+                <i data-lucide="coffee" class="absolute -right-10 -bottom-10 w-64 h-64 text-stone-900 opacity-50"></i>
+                
+                <div class="relative z-10 text-center" id="quiz-intro">
+                    <h3 class="text-3xl font-serif font-bold text-white mb-4">Temukan Karakter Kopimu</h3>
+                    <p class="text-stone-400 mb-8">Ikuti kuis singkat ini untuk mengetahui apakah Anda Tim Seko atau Tim Rongkong berdasarkan selera lidah Anda.</p>
+                    <button onclick="startQuiz()" class="bg-gold text-stone-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-500 transition-all shadow-lg">
+                        Mulai Kuis
+                    </button>
+                </div>
+
+                <div class="relative z-10 hidden" id="quiz-question-container">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-gold font-medium text-sm" id="quiz-progress">Pertanyaan 1/3</span>
+                    </div>
+                    <h4 class="text-2xl font-serif text-white mb-8" id="quiz-question">Pertanyaan muncul di sini</h4>
+                    <div class="space-y-4" id="quiz-options">
+                        <!-- Options injected by JS -->
+                    </div>
+                </div>
+
+                <div class="relative z-10 hidden text-center animate-fade-in" id="quiz-result">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-coffee-800 mb-6">
+                        <i data-lucide="award" class="w-10 h-10 text-gold"></i>
+                    </div>
+                    <h4 class="text-xl text-stone-400 mb-2">Kopi yang paling cocok untuk Anda adalah:</h4>
+                    <h2 class="text-4xl font-serif font-bold text-gold mb-4" id="result-title">Arabika Seko</h2>
+                    <p class="text-stone-300 mb-8 max-w-lg mx-auto" id="result-desc">Deskripsi hasil muncul di sini.</p>
+                    <button onclick="resetQuiz()" class="px-6 py-2 rounded-full font-medium text-white border border-stone-600 hover:bg-stone-800 transition-all">
+                        Coba Lagi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 border-t border-stone-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                <div>
+                    <div class="flex items-center gap-2 justify-center md:justify-start mb-4">
+                        <i data-lucide="coffee" class="text-gold h-6 w-6"></i>
+                        <span class="font-serif text-xl font-bold text-white tracking-wider">Lutra<span class="text-gold">Coffee</span></span>
+                    </div>
+                    <p class="text-stone-500 text-sm">Media promosi Kopi Specialty warisan budaya Luwu Utara. Mendukung petani lokal, melestarikan alam Sabana Seko dan Rongkong.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-stone-500 text-sm">
+                        <li><a href="#tentang" class="hover:text-gold transition">Sejarah Perdagangan</a></li>
+                        <li><a href="#produk" class="hover:text-gold transition">Sertifikat Indikasi Geografis</a></li>
+                        <li><a href="#budaya" class="hover:text-gold transition">Budaya Ngopi Luwu Utara</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Hubungi Kami (Kemitraan)</h4>
+                    <ul class="space-y-2 text-stone-500 text-sm">
+                        <li class="flex justify-center md:justify-start items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-gold"></i> Kab. Luwu Utara, Sulawesi Selatan
+                        </li>
+                        <li class="flex justify-center md:justify-start items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4 text-gold"></i> info@kopi-lutra.id
+                        </li>
+                        <li class="flex justify-center md:justify-start items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-gold"></i> +62 811 0000 0000
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-stone-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-stone-600 text-sm">© 2026 Promosi Kopi Luwu Utara. Hak Cipta Dilindungi.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-stone-600 hover:text-gold"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-stone-600 hover:text-gold"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-stone-600 hover:text-gold"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JS scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-stone-950/95', 'backdrop-blur-md', 'border-b', 'border-stone-800', 'shadow-lg');
+            } else {
+                nav.classList.remove('bg-stone-950/95', 'backdrop-blur-md', 'border-b', 'border-stone-800', 'shadow-lg');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Quiz Logic
+        const quizData = [
+            {
+                question: "Profil rasa seperti apa yang paling membuat Anda tergugah?",
+                options: [
+                    { text: "Rasa kompleks: manis karamel, sedikit asam buah, dan rempah.", type: "seko" },
+                    { text: "Rasa klasik: kental (bold), earthy, dan minim rasa asam.", type: "rongkong" }
+                ]
+            },
+            {
+                question: "Di mana suasana favorit Anda saat menikmati kopi?",
+                options: [
+                    { text: "Nongkrong santai di warkop sambil diskusi panjang.", type: "rongkong" },
+                    { text: "Di tempat sejuk atau dapur yang hangat, sekadar menikmati momen.", type: "seko" }
+                ]
+            },
+            {
+                question: "Pilih karakteristik biji kopi idaman Anda:",
+                options: [
+                    { text: "Biji specialty grade dengan sertifikasi perlindungan geografis (IG).", type: "seko" },
+                    { text: "Biji penggerak ekonomi kerakyatan, favorit para bupati dan warga lokal.", type: "rongkong" }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let scores = { seko: 0, rongkong: 0 };
+
+        const introSection = document.getElementById('quiz-intro');
+        const questionSection = document.getElementById('quiz-question-container');
+        const resultSection = document.getElementById('quiz-result');
+        const qText = document.getElementById('quiz-question');
+        const optionsContainer = document.getElementById('quiz-options');
+        const progressText = document.getElementById('quiz-progress');
+
+        function startQuiz() {
+            introSection.classList.add('hidden');
+            questionSection.classList.remove('hidden');
+            currentQuestion = 0;
+            scores = { seko: 0, rongkong: 0 };
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = quizData[currentQuestion];
+            qText.innerText = q.question;
+            progressText.innerText = `Pertanyaan ${currentQuestion + 1}/${quizData.length}`;
+            
+            optionsContainer.innerHTML = '';
+            q.options.forEach((opt) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl border border-stone-700 hover:border-gold hover:bg-stone-800 transition-all text-stone-300 group flex items-center justify-between";
+                btn.innerHTML = `<span>${opt.text}</span> <i data-lucide="chevron-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 text-gold transition-opacity"></i>`;
+                btn.onclick = () => selectOption(opt.type);
+                optionsContainer.appendChild(btn);
+            });
+            lucide.createIcons(); // re-init icons for dynamic content
+        }
+
+        function selectOption(type) {
+            scores[type]++;
+            currentQuestion++;
+            
+            if (currentQuestion < quizData.length) {
+                renderQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            questionSection.classList.add('hidden');
+            resultSection.classList.remove('hidden');
+            
+            const titleEl = document.getElementById('result-title');
+            const descEl = document.getElementById('result-desc');
+            
+            if (scores.seko >= scores.rongkong) {
+                titleEl.innerText = "Kopi Arabika Seko";
+                descEl.innerText = "Lidah Anda mendambakan kemewahan rasa! Anda cocok dengan kopi specialty grade bersertifikat IG ini yang menawarkan sensasi caramel, rempah hangat, dan eksotisme sabana bersuhu dingin.";
+            } else {
+                titleEl.innerText = "Kopi Rongkong";
+                descEl.innerText = "Anda adalah penikmat kopi sejati yang merakyat! Kopi Rongkong dengan body tebal dan rasa klasik yang kuat ini akan menemani hari-hari sibuk Anda, persis seperti menu andalan Warkop di Luwu Utara.";
+            }
+        }
+
+        function resetQuiz() {
+            resultSection.classList.add('hidden');
+            introSection.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
